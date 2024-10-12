@@ -1,4 +1,7 @@
 #!/usr/bin/make -f
 
+# Tests require the cockroachdb binary to be present, skip for now.
+override_dh_auto_test:
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang --with=golang

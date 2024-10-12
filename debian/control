@@ -1,15 +1,23 @@
-Source: template-repository
-Section: unknown
-Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Source: golang-github-cockroachdb-cockroach-go
+Section: devel
+Priority: extra
+Maintainer: Debian Go Packaging Team <pkg-go-maintainers@lists.alioth.debian.org>
+Uploaders: Michael Stapelberg <stapelberg@debian.org>
+Build-Depends: debhelper (>= 10),
+               dh-golang,
+               golang-any,
+               golang-github-lib-pq-dev
+Standards-Version: 4.1.1
+Homepage: https://github.com/cockroachdb/cockroach-go
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-go/packages/golang-github-cockroachdb-cockroach-go.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-go/packages/golang-github-cockroachdb-cockroach-go.git
+XS-Go-Import-Path: github.com/cockroachdb/cockroach-go
+Testsuite: autopkgtest-pkg-go
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-cockroachdb-cockroach-go-dev
+Architecture: all
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         golang-github-lib-pq-dev
+Description: Packages for go clients.
+ testing Testing helpers for cockroach clients.
